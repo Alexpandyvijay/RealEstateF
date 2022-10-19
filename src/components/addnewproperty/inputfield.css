@@ -1,0 +1,106 @@
+.input-field > form {
+    display: flex;
+    box-sizing: border-box;
+}
+.left, .right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 3%;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+label {
+    font-size: 14px;
+    color: #7D7D7D;
+}
+.input-field select , .input-field input{
+    border: 1px solid #C3C3C3;
+    border-radius: 4px;
+    height: 32px;
+    margin-bottom: 3vh;
+    margin-top: 1vh;
+    font-size: 13px;
+    color: #7D7D7D;
+
+}
+.input-field {
+    margin: 3% 5% 3% 5%;
+    box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+#save,#add{
+    background-color: #4C57B6;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0px 10px 3vh 10px;
+    width: 20%;
+    box-shadow: 5px 8px 10px 0px rgba(0,0,0,0.2);
+}
+#cancel ,#previous{
+    background-color: #6AB4F8;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0px 10px 3vh 10px;
+    width: 20%;
+    box-shadow: 5px 8px 10px 0px rgba(0,0,0,0.2);
+}
+
+input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    z-index: 3;
+}
+.imageDiv {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 0;
+    margin: 5vh 0px;
+    padding: 3vh 0px;
+}
+.imageDiv > span:nth-child(2) {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #6AB4F8;
+    z-index: 1;
+    margin-left: 7%;
+    box-shadow: 5px 8px 10px 0px rgba(0,0,0,0.2);
+}
+.imageDiv > span:last-child{
+    color:#7D7D7D;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+}
+.imageDiv > img{
+    position: absolute;
+    z-index: 2;
+}
+
+.basic {
+    justify-content: flex-start;
+}
+
+@media only screen and (max-width: 600px) {
+    form {
+        flex-direction: column;
+    }
+    .left ,.right {
+        width: 100%;
+    }
+}
