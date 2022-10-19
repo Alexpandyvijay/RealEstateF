@@ -20,7 +20,7 @@ const SignIn=()=>{
       }
       e.preventDefault();
       console.log(email,password);
-      const data = await (await fetch('http://propsaleback.herokuapp.com/login',{
+      const data = await (await fetch('http://propsaleback.herokuapp.com/',{
         method:"POST",
         crossDomain:true,
         headers:{
@@ -50,37 +50,6 @@ const SignIn=()=>{
         navigate("/display");
       }
     }
-    //   .then((data)=>{
-        // console.log(data);
-        // if(data.error==="Invalid password"){
-        //   return alert("Invalid password");
-        // }
-        // if(data.error==="User Not found"){
-        //   return alert("User does not exist")
-        // }
-        // if(data.status === "ok"){
-        //   store.dispatch({
-        //     type : "addUser",
-        //     playload : {
-        //       userId : data.user.userId,
-        //       userName : email.split("@")[0]
-        //     }
-        //   })
-        //   console.log({
-        //     userId : data.user.userId,
-        //     userName : email.split("@")[0]
-        //   });
-        //   alert("login successfull");
-        //   window.localStorage.setItem("token", data.token);
-        //   window.location.href = "./display";
-        // }
-    //     }
-    //   )
-    //   setUseInfo({
-    //     userName : email.split("@")[0]
-    //   });
-    //   console.log(useInfo);
-    // }
     
     
     return(
