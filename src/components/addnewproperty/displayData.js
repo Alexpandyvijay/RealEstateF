@@ -19,7 +19,7 @@ export default function UserList(props){
 
     useEffect(()=>{
       const fetchdata= async () => {
-        let data = await (await fetch("http://propsaleback.herokuapp.com/display",{
+        let data = await (await fetch("https://propsaleback.herokuapp.com/display",{
           method:"GET",
           headers:{
             authorization : useInfo.accessToken

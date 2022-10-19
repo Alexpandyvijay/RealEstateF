@@ -25,7 +25,7 @@ const SignUp=()=>{
         alert("Password does not match!")
         return
       }
-      fetch('http://propsaleback.herokuapp.com/signup',{
+      fetch('https://propsaleback.herokuapp.com/signup',{
         method:"POST",
         crossDomain:true,
         headers:{
