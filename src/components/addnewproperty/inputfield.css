@@ -15,6 +15,7 @@
 label {
     font-size: 14px;
     color: #7D7D7D;
+    font-weight: 600;
 }
 .input-field select , .input-field input{
     border: 1px solid #C3C3C3;
@@ -23,8 +24,9 @@ label {
     margin-bottom: 3vh;
     margin-top: 1vh;
     font-size: 13px;
-    color: #7D7D7D;
-
+}
+.input-field option, .input-field input::placeholder,.input-field select{
+    color: #BCBCBC;
 }
 .input-field {
     margin: 3% 5% 3% 5%;

@@ -4,7 +4,7 @@
 }
 .display > .search {
     display: flex;
-    padding: 5vh 3%;
+    padding: 3vh 3%;
     box-sizing: border-box;
 }
 .search > div{
@@ -77,11 +77,34 @@
     border-radius: 5px;
 }
 .table-details > div > img {
-    width: 16px;
+    width: auto;
     height: 16px;
     margin: 0px 3px;
 }
 .align-table {
     display: flex;
     flex-direction: column;
+    min-height: 55vh;
+    overflow-y: scroll;
 }
+.last {
+    display: flex;
+    justify-content: center;
+}
+.pagination {
+    display: inline-block;
+    margin: 2vh 0px;
+    background-color: #E1F9F4;
+    border-radius: 10px;
+    box-shadow: 5px 8px 10px 0px rgba(0,0,0,0.03);
+}
+.pagination div {
+    color: #BCBCBC;
+    font-weight: 600;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+  }
+
+.pagination div:hover:not(.active) {background-color: #ddd;}
