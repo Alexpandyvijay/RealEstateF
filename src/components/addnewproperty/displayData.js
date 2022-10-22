@@ -6,6 +6,8 @@ import lens from "./images/fi-rr-search.png";
 import "./displayData.css";
 import { userContext } from "../../App";
 import { useNavigate } from "react-router-dom";
+import Popup from "./popup";
+import "./popup.css";
 
 
 
@@ -49,21 +51,6 @@ export default function UserList(props){
       }
     },[userInfo]);
 
-    const currentPage=(e)=>{
-      let el = e.target.innerText;
-      el = parseInt(el);
-      let end = el*6;
-      let start = end-6;
-      if(end >= userInfo.length){
-        end = userInfo.length;
-        start = (el-1)*6;
-      }
-      if(end === start){
-        setPage(userInfo.slice(start));
-      }else{
-        setPage(userInfo.slice(start,end));
-      }
-    }
     
     const handleFilter = (e) => {
       if (e.target.value === '') {
@@ -86,20 +73,20 @@ export default function UserList(props){
     const handlePageCountInc = ()=>{
       let totalPage = Math.ceil(userInfo.length/6);
       if(totalPage > 2){
-        if((pageCount[1]+2)<=totalPage){
+          if((pageCount[1]+2)<=totalPage){
           let newPage = pageCount.map((el)=>(el+2));
           setPageCount(newPage);
-        }else{
+          }else{
           let newPage=[];
           for(let j=pageCount[1]+1;j<=totalPage;j++){
-            newPage.push(j);
+              newPage.push(j);
           }
           setPageCount(newPage);
-        }
+          }
       }
-    }
-
-    const handlePageCountDec= ()=>{
+  }
+  
+  const handlePageCountDec= ()=>{
       if((pageCount[0]-2)>0){
         let newPage=[];
         for(let k=pageCount[0]-2;k<pageCount[0];k++){
@@ -107,13 +94,43 @@ export default function UserList(props){
         }
         setPageCount(newPage);
       }
-    }
+  }
+  
+  const currentPage=(e)=>{
+      let el = e.target.innerText;
+      el = parseInt(el);
+      let end = el*6;
+      let start = end-6;
+      if(end >= userInfo.length){
+          end = userInfo.length;
+          start = (el-1)*6;
+      }
+      if(end === start){
+          setPage(userInfo.slice(start));
+      }else{
+          setPage(userInfo.slice(start,end));
+      }
+  }
+
 
     const TableDetail = (props) => {
+      const [trigger,setTrigger] = useState(false);
+
+      const arrayBufferToBase64=(buffer)=> {
+        var binary = '';
+        var bytes = [].slice.call(new Uint8Array(buffer));
+        bytes.forEach((b) => binary += String.fromCharCode(b));
+        return window.btoa(binary);
+      };
+      var base64Flag = 'data:image/jpeg;base64,';
+      var imageStr = arrayBufferToBase64(props.inf.image.data.data);
+
         return (
+          <>
+            <Popup trigger={trigger} base64Flag={base64Flag} imageStr={imageStr} setTrigger={setTrigger}/>
             <div className="table-details">
                 <div>{props.inf.PPDID}</div>
-                <div><img src={imgcon} alt="img"></img></div>
+                <div onClick={()=>(setTrigger(true))}><img src={imgcon} alt="imgicon"></img></div>
                 <div>{props.inf.propType}</div>
                 <div>{props.inf.mobile}</div>
                 <div>{props.inf.area}</div>
@@ -122,6 +139,7 @@ export default function UserList(props){
                 <div>{0}</div>
                 <div><img src={eyecon} alt="eyecon"></img><img src={pen} alt="pen"></img></div>
             </div>
+          </>
         );
     }
     let count=0;
