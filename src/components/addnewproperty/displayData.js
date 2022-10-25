@@ -115,6 +115,7 @@ export default function UserList(props){
 
     const TableDetail = (props) => {
       const [trigger,setTrigger] = useState(false);
+      const [extraInfo,setExtraInfo] = useState(false);
 
       const arrayBufferToBase64=(buffer)=> {
         var binary = '';
@@ -137,8 +138,18 @@ export default function UserList(props){
                 <div>{0}</div>
                 <div><span>{props.inf.salesType}</span></div>
                 <div>{0}</div>
-                <div><img src={eyecon} alt="eyecon"></img><img src={pen} alt="pen"></img></div>
+                <div><img src={eyecon} alt="eyecon" onClick={()=>(setExtraInfo(!extraInfo))}></img><img src={pen} alt="pen"></img></div>
             </div>
+            {extraInfo && <div className="additional-prop">
+                <div><span>Price</span>{props.inf.price}</div>
+                <div><span>Property Age</span>{props.inf.propAge}</div>
+                <div><span>Property Approval</span>{props.inf.propAppro}</div>
+                <div><span>Total Area</span>{props.inf.totalArea}</div>
+                <div><span>Area Unit</span>{props.inf.areaUnit}</div>
+                <div><span>No of BHK</span>{props.inf.numOfBHK}</div>
+                <div><span>No of Floor</span>{props.inf.numOfFloor}</div>
+                <div><span>Electricity</span>{props.inf.electricity}</div>
+            </div>}
           </>
         );
     }

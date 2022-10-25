@@ -84,6 +84,7 @@
     display: flex;
     flex-direction: column;
     min-height: 55vh;
+    max-height: 55vh;
     overflow-y: scroll;
 }
 .last {
@@ -108,3 +109,27 @@
   }
 
 .pagination div:hover:not(.active) {background-color: #ddd;cursor: pointer;}
+
+.additional-prop {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap : 10px;
+}
+.additional-prop {
+    text-align: left;
+    margin: 1vh 3%;
+    border-radius: 10px;
+    padding: 2vh 2%;
+    font-size: small;
+}
+.additional-prop > div {
+    margin: 1vh 1%;
+    color: #284E91;
+}
+.additional-prop > div > span {
+    background-color:#E1F9F4;
+    color: #AAAAAA;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 0px 10px 0px 0px;
+}
