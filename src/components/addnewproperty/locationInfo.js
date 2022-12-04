@@ -54,7 +54,7 @@ export default function LocationInfo(props){
             for(let key in finalData){
                 formData.append(key,finalData[key]);
             }
-            let docs= await axios.post(`https://propsaleback.herokuapp.com/display`,formData,{
+            let docs= await axios.post(`https://realestateserver.onrender.com/display`,formData,{
                     headers : {
                         authorization : useInfo.accessToken
                     }

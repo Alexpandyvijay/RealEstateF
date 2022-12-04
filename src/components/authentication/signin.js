@@ -20,7 +20,7 @@ const SignIn=()=>{
       }
       e.preventDefault();
       console.log(email,password);
-      const data = await (await fetch('https://propsaleback.herokuapp.com/',{
+      const data = await (await fetch('https://realestateserver.onrender.com/',{
         method:"POST",
         crossDomain:true,
         headers:{

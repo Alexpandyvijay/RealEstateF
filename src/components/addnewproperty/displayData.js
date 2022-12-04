@@ -23,7 +23,7 @@ export default function UserList(props){
 
     useEffect(()=>{
       const fetchdata= async () => {
-        let data = await (await fetch("https://propsaleback.herokuapp.com/display",{
+        let data = await (await fetch("https://realestateserver.onrender.com/display",{
           method:"GET",
           headers:{
             authorization : useInfo.accessToken

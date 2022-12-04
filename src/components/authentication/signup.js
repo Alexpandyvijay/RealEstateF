@@ -25,7 +25,7 @@ const SignUp=()=>{
         alert("Password does not match!")
         return
       }
-      fetch('https://propsaleback.herokuapp.com/signup',{
+      fetch('https://realestateserver.onrender.com/signup',{
         method:"POST",
         crossDomain:true,
         headers:{
